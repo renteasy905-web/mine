@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday My Love</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Dancing Script', cursive;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1920') center/cover fixed;
+    }
+
+    section::before {
+      content:''; position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:1;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 90px 20px 110px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    section.active { display: flex; }
+    section > * { position: relative; z-index: 2; }
+
+    h1 {
+      font-size: 5.2rem;
+      color: #ffd700;
+      text-shadow: 0 0 30px rgba(0,0,0,0.9);
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 2.6rem;
+      color: #ffeb99;
+      text-shadow: 0 0 20px #000;
+      line-height: 1.6;
+      margin: 25px auto;
+      max-width: 92%;
+    }
+
+    .heart-img {
+      width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
+      border: 12px solid #ffd700; box-shadow: 0 0 80px gold; margin: 40px 0;
+    }
+
+    .btn {
+      padding: 16px 55px; margin: 15px; font-size: 1.5rem;
+      border: 3px solid #ffd700; background: rgba(255,215,0,0.25);
+      color: #ffd700; border-radius: 50px; cursor: pointer;
+      backdrop-filter: blur(10px); transition: 0.4s; font-family: 'Dancing Script', cursive;
+    }
+    .btn:hover { background:#ffd700; color:#000; transform:scale(1.08); }
+
+    /* Fixed message only on first page */
+    .fixed-msg {
+      position: fixed;
+      top: 40px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,215,0,0.3); color: white;
+      padding: 14px 40px; border-radius: 50px; font-size: 2.3rem;
+      font-weight: 700; backdrop-filter: blur(12px); border: 2px solid gold;
+      z-index: 100;
+    }
+
+    /* Couple animation */
+    .couple {
+      position: fixed; font-size: 90px; bottom: -150px; opacity: 0;
+      transition: all 1s ease-out; z-index: 90; filter: drop-shadow(0 0 25px gold);
+    }
+    .couple.left { left: 15px; }
+    .couple.right { right: 15px; }
+    .show-couple .couple { bottom: 35px; opacity: 1; }
+
+    @media (max-width:480px) {
+      h1 { font-size:4.2rem; } p { font-size:2.2rem; }
+      .couple { font-size:70px; }
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <!-- Pages -->
+  <section id="p1" class="active">
+    <h1>Happy Birthday<br>My Love</h1>
+    <p>Today is all about you my princess</p>
+    <button class="btn" onclick="go(2)">LETS GO</button>
+  </section>
+
+  <section id="p2">
+    <img src="https://i.imgur.com/4ZJ8QJk.jpeg" class="heart-img">
+    <h1>This is Us</h1>
+    <p>Two hearts beating as one forever</p>
+    <div>
+      <button class="btn" onclick="go(1)">Back</button>
+      <button class="btn" onclick="go(3)">Next</button>
+    </div>
+  </section>
+
+  <section id="p3">
+    <h1>My Angel</h1>
+    <p>You make every day magical</p>
+    <p>I love you more every moment</p>
+    <div>
+      <button class="btn" onclick="go(2)">Back</button>
+      <button class="btn" onclick="go(4)">Next</button>
+    </div>
+  </section>
+
+  <section id="p4">
+    <img src="https://i.imgur.com/3iB5ZcD.jpeg" class="heart-img">
+    <h1>My Promise</h1>
+    <p>Good days, bad days, every day</p>
+    <p>I choose you — forever</p>
+    <div>
+      <button class="btn" onclick="go(3)">Back</button>
+      <button class="btn" onclick="go(5)">Next</button>
+    </div>
+  </section>
+
+  <section id="p5">
+    <h1>I Love You</h1>
+    <h1 style="font-size:7.5rem;color:#ff6b9d;">Endlessly</h1>
+    <p>to my future wife · my everything</p>
+    <p style="margin-top:60px;font-size:3.5rem;color:#ffd700;">Forever yours</p>
+    <button class="btn" onclick="go(4)">Back</button>
+  </section>
+
+  <!-- Confetti script (celebration blast) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function go(n) {
+      // Hide fixed message after first page
+      if (n > 1) document.getElementById('fixedMsg').style.display = 'none';
+
+      document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+      document.getElementById('p'+n).classList.add('active');
+
+      // Celebration blast
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#ffd700', '#ff6b9d', '#ffffff']
+      });
+
+      // Couple animation
+      document.body.classList.add('show-couple');
+      setTimeout(()=>document.body.classList.remove('show-couple'), 5000);
+
+      window.scrollTo(0,0);
+    }
+
+    // First load
+    window.onload = () => {
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      document.body.classList.add('show-couple');
+      setTimeout(()=>document.body.classList.remove('show-couple'), 5000);
+    };
+  </script>
+</body>
+</html>
