@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday ♡</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="preconnect" href="https://fonts.googleapis.com">
+  <title>Happy Birthday My Love</title>
+  <link rel="stylesheet" href="/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* tiny fallback if style.css is slow */
+    body { margin:0; font-family:'Poppins',sans-serif; }
+  </style>
 </head>
 <body>
 
@@ -14,20 +17,20 @@
     <div class="content">
       <h1>Happy Birthday<br><span>My Love</span></h1>
       <p>A little surprise is waiting for you...</p>
-      
-      <a href="page2.html" class="btn">Click Here ♡</a>
-      
+      <a href="/page2.html" class="btn">Click Here</a>
       <div class="arrow">↓</div>
     </div>
-    <!-- Replace this with your own image URL or local file -->
     <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1920" alt="cover" class="bg-image"/>
   </div>
 
   <audio id="bgmusic" loop>
-    <!-- Beautiful romantic piano – direct online link (no download needed) -->
     <source src="https://cdn.pixabay.com/download/audio/2022/11/22/audio_1c5f0d2f3b.mp3?filename=forever-love-11339.mp3" type="audio/mp3">
   </audio>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
+  <script>
+    // Auto-play music on first tap/click (works everywhere)
+    document.body.addEventListener('click',()=>document.getElementById('bgmusic').play(),{once:true});
+  </script>
 </body>
 </html>
