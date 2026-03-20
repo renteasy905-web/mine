@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUME – Our Moments | Suraj & Meghana</title>
+
+  <meta name="description" content="SUME – Our special moments. The proposal, first meet, first travel, video calls, gifts. Surii and Meghu since 21 March 2025." />
+  <meta name="keywords" content="SUME, Suraj Meghana moments, Surii Meghu memories, SUME couple photos, 21-03-2025" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --cream:       #fdf6ec;
+      --cream-mid:   #f5e9d4;
+      --gold:        #c9a84c;
+      --gold-light:  #e8cc85;
+      --gold-muted:  #d4b870;
+      --choco:       #7a5c38;
+      --choco-mid:   #6b4f30;
+      --choco-light: #9e7d56;
+      --text-dark:   #3d2b14;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(155deg, #fffdf5 0%, #fdf3e0 45%, #f5e4c8 100%);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 36px;
+      border-bottom: 1px solid #e8cc8535;
+      position: sticky;
+      top: 0;
+      background: #fffdf5ee;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--choco);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: transform 0.3s;
+    }
+    .nav-back:hover { transform: translateX(-4px); }
+    .back-arrow {
+      width: 11px; height: 11px;
+      border-left: 1.5px solid var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+      transform: rotate(45deg);
+    }
+    .nav-logo {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 8px;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+    }
+    .nav-page {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--choco-light);
+      text-transform: uppercase;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 48px;
+      animation: fadeDown 1.1s ease both;
+    }
+    .hero .label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+    .hero h1 em { font-style: italic; color: var(--choco); }
+    .hero .sub {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--choco-mid);
+      margin-top: 14px;
+      font-weight: 300;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform: translateY(-26px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 360px;
+      margin: 0 auto 64px;
+    }
+    .div-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+    }
+    .div-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 7px var(--gold-light);
+    }
+
+    /* ===== CARDS GRID ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 24px 90px;
+    }
+
+    /* ===== MOMENT CARD ===== */
+    .moment-card {
+      background: linear-gradient(145deg, #fffcf4, #f8ead8);
+      border: 1px solid #debb7060;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.38s ease, box-shadow 0.38s ease;
+      animation: riseUp 0.85s ease both;
+    }
+    .moment-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 56px #c9a84c22;
+    }
+    /* top gold accent */
+    .moment-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      z-index: 2;
+    }
+
+    .moment-card:nth-child(1) { animation-delay: 0.05s; }
+    .moment-card:nth-child(2) { animation-delay: 0.13s; }
+    .moment-card:nth-child(3) { animation-delay: 0.21s; }
+    .moment-card:nth-child(4) { animation-delay: 0.29s; }
+    .moment-card:nth-child(5) { animation-delay: 0.37s; }
+    .moment-card:nth-child(6) { animation-delay: 0.45s; }
+
+    @keyframes riseUp {
+      from { opacity:0; transform: translateY(32px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* ===== IMAGE BOX ===== */
+    .img-box {
+      width: 100%;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f0dfc0, #e8d4a8);
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .moment-card:hover .img-box img {
+      transform: scale(1.04);
+    }
+
+    /* placeholder shown when image missing */
+    .img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #f5e9d4, #ecdfc8);
+    }
+    .img-placeholder .ph-num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 36px;
+      font-weight: 200;
+      color: var(--gold-muted);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .img-placeholder .ph-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--choco-light);
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* shimmer on placeholder */
+    .img-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 30%, #ffffff22 50%, transparent 70%);
+      animation: shimmer 2.8s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+
+    /* number badge on image */
+    .img-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #fff;
+      text-transform: uppercase;
+      background: #3d2b1488;
+      backdrop-filter: blur(6px);
+      padding: 4px 12px;
+      z-index: 3;
+    }
+
+    /* ===== CARD BODY ===== */
+    .card-body {
+      padding: 28px 28px 32px;
+    }
+    .card-tag {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .card-body h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 13px;
+      line-height: 1.3;
+    }
+    .card-body p {
+      font-size: 1.03rem;
+      line-height: 1.95;
+      color: var(--choco-mid);
+      font-weight: 300;
+    }
+    .card-body p em {
+      font-style: italic;
+      color: var(--choco);
+    }
+
+    /* bottom corner accent */
+    .card-body::after {
+      content: '';
+      display: block;
+      width: 26px; height: 26px;
+      border-bottom: 1px solid #e8cc8550;
+      border-right: 1px solid #e8cc8550;
+      margin-top: 20px;
+      margin-left: auto;
+    }
+
+    /* ===== SEPARATOR ===== */
+    .separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 0 60px;
+    }
+    .sep-line { width: 100px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-muted)); }
+    .sep-line.r { background: linear-gradient(90deg, var(--gold-muted), transparent); }
+    .sep-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ===== PAGE NAV ===== */
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px 50px;
+      border-top: 1px solid #e8cc8530;
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 12px 28px;
+      border: 1px solid var(--gold-muted);
+      background: linear-gradient(135deg, #fffdf540, #f5e9d460);
+      color: var(--choco);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .nav-btn.back:hover { transform: translateX(-4px); box-shadow: 0 6px 24px #c9a84c20; }
+    .btn-arrow-left {
+      width: 12px; height: 12px;
+      border-left: 1.5px solid var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+      transform: rotate(45deg);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(180deg, var(--cream-mid), #e8d9b8);
+      padding: 38px 20px;
+      text-align: center;
+      border-top: 1px solid #e8cc8535;
+    }
+    .footer-sume {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 8px;
+      color: var(--gold-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    footer p { font-size: 1rem; color: var(--choco-light); font-style: italic; }
+    footer .footer-date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="sume-page2.html" class="nav-back">
+    <div class="back-arrow"></div>
+    <span>Back</span>
+  </a>
+  <div class="nav-logo">SUME</div>
+  <div class="nav-page">Page 03</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="label">SUME &mdash; Our Moments</div>
+  <h1>The moments I<br/><em>never want to forget</em></h1>
+  <p class="sub">Meghu, every picture here is a feeling I still carry with me.</p>
+</div>
+
+<div class="divider">
+  <div class="div-line"></div>
+  <div class="div-dot"></div>
+  <div class="div-line"></div>
+</div>
+
+<!-- CARDS GRID -->
+<div class="grid">
+
+  <!-- CARD 1: She Accepted -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="1.png" alt="The day Meghu said yes - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">01</span>
+        <span class="ph-text">Place 1.png here</span>
+      </div>
+      <div class="img-badge">Moment 01</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; 21 March 2025 &bull; 4:00 PM</div>
+      <h3>The Day You Said Yes</h3>
+      <p>
+        Meghu, I had waited three months for this. And when you finally said yes at exactly 4 PM that day &mdash; everything around me just stopped. <em>That was the moment I knew my life had changed for good.</em> I will never forget how that felt. Not ever.
+      </p>
+    </div>
+  </div>
+
+  <!-- CARD 2: First Meet -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="2.png" alt="Our first meeting - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">02</span>
+        <span class="ph-text">Place 2.png here</span>
+      </div>
+      <div class="img-badge">Moment 02</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; First Meet</div>
+      <h3>The First Time I Saw You</h3>
+      <p>
+        Soni, I still remember the nervousness I felt before meeting you. And then you were just there &mdash; exactly like I had pictured, but better. <em>That meeting stayed with me for days.</em> I kept thinking about it on the way back and I still think about it now.
+      </p>
+    </div>
+  </div>
+
+  <!-- CARD 3: First Travel -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="3.png" alt="Our first travel together - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">03</span>
+        <span class="ph-text">Place 3.png here</span>
+      </div>
+      <div class="img-badge">Moment 03</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; First Travel</div>
+      <h3>Our First Trip Together</h3>
+      <p>
+        Meghu, travelling with you for the first time felt different from anything I had done before. It was not even about where we went. It was about being somewhere new <em>with you beside me.</em> That is when I understood what it means to actually enjoy a place.
+      </p>
+    </div>
+  </div>
+
+  <!-- CARD 4: Video Call -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="4.png" alt="Our video calls - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">04</span>
+        <span class="ph-text">Place 4.png here</span>
+      </div>
+      <div class="img-badge">Moment 04</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; Video Calls</div>
+      <h3>Those Late Night Calls</h3>
+      <p>
+        Soni, our video calls were everything when we could not be in the same place. I would see your face on the screen and the distance did not feel so bad anymore. <em>You made even a phone screen feel warm.</em> I looked forward to those calls more than anything else.
+      </p>
+    </div>
+  </div>
+
+  <!-- CARD 5: My Gift to Her -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="5.png" alt="My gift to Meghu - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">05</span>
+        <span class="ph-text">Place 5.png here</span>
+      </div>
+      <div class="img-badge">Moment 05</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; My Gift</div>
+      <h3>When I Gave You Something</h3>
+      <p>
+        Meghu, I thought about it for a long time before I gave you that gift. I wanted it to mean something. And watching your face when you received it &mdash; <em>that reaction is something I saved inside me.</em> That is the kind of happy I want to keep giving you.
+      </p>
+    </div>
+  </div>
+
+  <!-- CARD 6: Her Gift to Him -->
+  <div class="moment-card">
+    <div class="img-box">
+      <img src="6.png" alt="Meghu's gift to me - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none;">
+        <span class="ph-num">06</span>
+        <span class="ph-text">Place 6.png here</span>
+      </div>
+      <div class="img-badge">Moment 06</div>
+    </div>
+    <div class="card-body">
+      <div class="card-tag">SUME &mdash; Your Gift</div>
+      <h3>What You Gave Me</h3>
+      <p>
+        Soni, the gift you gave me was not just a thing. It was the thought behind it that got me. The fact that you picked something <em>knowing me</em> &mdash; knowing what I would like. That showed me how much attention you pay. I keep that close. Always.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- SEPARATOR -->
+<div class="separator">
+  <div class="sep-line"></div>
+  <div class="sep-text">SUME</div>
+  <div class="sep-line r"></div>
+</div>
+
+<!-- PAGE NAV -->
+<div class="page-nav">
+  <a href="sume-page2.html" class="nav-btn back">
+    <div class="btn-arrow-left"></div>
+    <span>Page 02</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-sume">SUME</div>
+  <p>Written by Surii, for his Meghu &mdash; his Soni, his forever.</p>
+  <div class="footer-date">21 &mdash; 03 &mdash; 2025 &nbsp;|&nbsp; Surii &amp; Meghu</div>
+</footer>
+
+</body>
+</html>
