@@ -2,192 +2,758 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  />
-  <title>Happy Birthday My Love</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SUME - Suraj & Meghana | Our Love Story</title>
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="SUME - The beautiful love story of Suraj (Surii) and Meghana (Meghu, Soni). A journey that began on 21st March 2025." />
+  <meta name="keywords" content="SUME, Suraj Meghana, Surii Meghu, Surii Soni, love story, couple, 21-03-2025" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="SUME - Suraj & Meghana" />
+  <meta property="og:description" content="SUME - A love story written in stars. Suraj & Meghana, together since 21st March 2025." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --cream: #fdf6ec;
+      --cream-light: #fffdf8;
+      --cream-mid: #f5e9d4;
+      --gold: #c9a84c;
+      --gold-light: #e8cc85;
+      --gold-pale: #f0dfa0;
+      --gold-muted: #d4b870;
+      --warm-brown: #7a5c38;
+      --text-dark: #4a3520;
+      --text-mid: #6b4f30;
+      --text-light: #9e7d56;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Dancing Script', cursive;
-      color: #fff;
-      min-height: 100vh;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
       overflow-x: hidden;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1920') center/cover fixed;
     }
 
-    section::before {
-      content:''; position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:1;
-    }
-
-    section {
+    /* ========== PAGE 1 ========== */
+    .page-one {
       min-height: 100vh;
-      padding: 90px 20px 110px;
-      display: none;
+      background: linear-gradient(160deg, #fffdf5 0%, #fdf3e0 40%, #f7e8cc 100%);
+      display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: flex-start;
+      padding: 0 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative corner borders */
+    .page-one::before {
+      content: '';
+      position: absolute;
+      top: 18px; left: 18px; right: 18px; bottom: 18px;
+      border: 1.5px solid var(--gold-muted);
+      opacity: 0.4;
+      pointer-events: none;
+      animation: borderFade 3s ease-in-out infinite alternate;
+    }
+    .page-one::after {
+      content: '';
+      position: absolute;
+      top: 26px; left: 26px; right: 26px; bottom: 26px;
+      border: 0.5px solid var(--gold-light);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    @keyframes borderFade {
+      from { opacity: 0.3; }
+      to   { opacity: 0.55; }
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f0dfa022 0%, transparent 70%);
+      animation: floatOrb 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .orb-1 { width: 340px; height: 340px; top: -80px; left: -100px; animation-delay: 0s; }
+    .orb-2 { width: 260px; height: 260px; bottom: 60px; right: -60px; animation-delay: 3s; }
+    .orb-3 { width: 180px; height: 180px; top: 40%; left: 5%; animation-delay: 1.5s; }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    /* SEO keyword - visually placed but styled elegantly */
+    .seo-tag {
+      position: absolute;
+      top: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    /* Top heading */
+    .page-header {
+      margin-top: 70px;
+      text-align: center;
+      animation: fadeDown 1.2s ease both;
+    }
+    .page-header .since {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .page-header h1 {
+      font-size: clamp(2.6rem, 7vw, 4.8rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+    .page-header h1 em {
+      font-style: italic;
+      color: var(--warm-brown);
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Circle image container */
+    .circle-container {
+      margin-top: 44px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: riseUp 1.4s ease 0.3s both;
+    }
+
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(40px) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Outer glow ring */
+    .ring-glow {
+      position: absolute;
+      width: 258px; height: 258px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #e8cc8520 0%, transparent 70%);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+
+    /* Rotating dashed ring */
+    .ring-rotate {
+      position: absolute;
+      width: 248px; height: 248px;
+      border-radius: 50%;
+      border: 1px dashed #c9a84c55;
+      animation: rotateSlow 18s linear infinite;
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* Main golden border circle */
+    .circle-photo {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      border: 2.5px solid var(--gold-light);
+      box-shadow:
+        0 0 0 6px #f5e9d440,
+        0 0 0 9px #e8cc8528,
+        0 0 30px #c9a84c30,
+        inset 0 0 20px #f0dfa015;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(135deg, #fdf6ec, #f5e9d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Fallback if image missing */
+    .circle-photo .img-placeholder {
+      font-size: 80px;
+      opacity: 0.18;
+      color: var(--gold);
+      user-select: none;
+    }
+
+    /* Date badge */
+    .date-badge {
+      margin-top: 22px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--warm-brown);
+      text-transform: uppercase;
+      text-align: center;
+      animation: riseUp 1.4s ease 0.6s both;
+    }
+    .date-badge span {
+      display: inline-block;
+      background: linear-gradient(90deg, transparent, #e8cc8540, transparent);
+      padding: 5px 22px;
+      border-top: 1px solid #c9a84c55;
+      border-bottom: 1px solid #c9a84c55;
+    }
+
+    /* Names below circle */
+    .names-block {
+      margin-top: 28px;
+      text-align: center;
+      animation: riseUp 1.4s ease 0.8s both;
+    }
+    .names-block .primary-names {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+    }
+    .names-block .primary-names .amp {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.3em;
+      margin: 0 10px;
+    }
+    .names-block .nick-names {
+      font-size: 13px;
+      font-family: 'Josefin Sans', sans-serif;
+      letter-spacing: 3px;
+      color: var(--text-light);
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 36px auto 0;
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 1.5s ease 1s both;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+    }
+    .divider-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 6px var(--gold-light);
+    }
+
+    /* Opening quote on page 1 */
+    .opening-quote {
+      max-width: 500px;
+      text-align: center;
+      margin: 32px auto 0;
+      animation: fadeIn 1.5s ease 1.2s both;
+      padding: 0 16px;
+    }
+    .opening-quote p {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .opening-quote .attr {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: fadeIn 2s ease 2s both;
+    }
+    .scroll-hint span {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+    .scroll-arrow {
+      width: 18px; height: 18px;
+      border-right: 1px solid var(--gold-muted);
+      border-bottom: 1px solid var(--gold-muted);
+      transform: rotate(45deg);
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(5px); }
+    }
+
+    /* ========== SECTIONS BELOW ========== */
+    .section {
+      padding: 80px 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      text-align: center;
+      color: var(--text-dark);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+    .section-title em { font-style: italic; color: var(--warm-brown); }
+
+    /* Story paragraphs */
+    .story-para {
+      font-size: 1.13rem;
+      line-height: 2;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    /* Blockquote */
+    .love-quote {
+      border-left: 3px solid var(--gold-light);
+      margin: 48px 0;
+      padding: 20px 36px;
+      background: linear-gradient(90deg, #f5e9d440, transparent);
       position: relative;
     }
-    section.active { display: flex; }
-    section > * { position: relative; z-index: 2; }
-
-    h1 {
-      font-size: 5.2rem;
-      color: #ffd700;
-      text-shadow: 0 0 30px #000;
-      margin: 20px 0;
+    .love-quote::before {
+      content: '\201C';
+      font-size: 5rem;
+      color: var(--gold-pale);
+      position: absolute;
+      top: -10px; left: 14px;
+      line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .love-quote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.9;
+      color: var(--text-dark);
+      padding-left: 10px;
+    }
+    .love-quote .quote-attr {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 14px;
+      padding-left: 10px;
+      text-transform: uppercase;
     }
 
-    p {
-      font-size: 2.6rem;
-      color: #ffeb99;
-      text-shadow: 0 0 20px #000;
-      line-height: 1.6;
-      margin: 25px auto;
-      max-width: 92%;
+    /* Grid cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .card {
+      background: linear-gradient(145deg, #fffdf5, #f7e8cc60);
+      border: 1px solid #e8cc8560;
+      padding: 36px 28px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px #c9a84c18;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+    .card-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .card p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
     }
 
-    .heart-img {
-      width: 280px; height: 280px; border-radius: 50%; object-fit: cover;
-      border: 12px solid #ffd700; box-shadow: 0 0 80px gold; margin: 40px 0;
+    /* Separator section */
+    .separator {
+      text-align: center;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .sep-line {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-muted));
+    }
+    .sep-line.rev { background: linear-gradient(90deg, var(--gold-muted), transparent); }
+    .sep-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
     }
 
-    .btn {
-      padding: 16px 55px; margin: 15px; font-size: 1.5rem;
-      border: 3px solid #ffd700; background: rgba(255,215,0,0.25);
-      color: #ffd700; border-radius: 50px; cursor: pointer;
-      backdrop-filter: blur(10px); transition: 0.4s;
+    /* Promise section */
+    .promise-wrap {
+      background: linear-gradient(135deg, #fdf3e0, #f5e9d4);
+      border: 1px solid #dbb86640;
+      padding: 60px 40px;
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
     }
-    .btn:hover { background:#ffd700; color:#000; transform:scale(1.08); }
-
-    .fixed-msg {
-      position: fixed;
-      top: 40px; left: 50%; transform: translateX(-50%);
-      background: rgba(255,215,0,0.3); color: white;
-      padding: 14px 40px; border-radius: 50px; font-size: 2.3rem;
-      font-weight: 700; backdrop-filter: blur(12px); border: 2px solid gold;
-      z-index: 100;
+    .promise-wrap::before,
+    .promise-wrap::after {
+      content: '';
+      position: absolute;
+      width: 50px; height: 50px;
+    }
+    .promise-wrap::before {
+      top: 12px; left: 12px;
+      border-top: 1.5px solid var(--gold-light);
+      border-left: 1.5px solid var(--gold-light);
+    }
+    .promise-wrap::after {
+      bottom: 12px; right: 12px;
+      border-bottom: 1.5px solid var(--gold-light);
+      border-right: 1.5px solid var(--gold-light);
+    }
+    .promise-wrap p {
+      font-size: 1.15rem;
+      line-height: 2;
+      color: var(--text-mid);
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    .promise-names {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
     }
 
-    .couple {
-      position: fixed; font-size: 90px; bottom: -150px; opacity: 0;
-      transition: all 1s ease-out; z-index: 90; filter: drop-shadow(0 0 25px gold);
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, var(--cream-mid), #ecdfc8);
+      padding: 50px 20px;
+      text-align: center;
+      border-top: 1px solid #e8cc8540;
     }
-    .couple.left { left: 15px; }
-    .couple.right { right: 15px; }
-    .show-couple .couple { bottom: 35px; opacity: 1; }
-
-    @media (max-width:480px) {
-      h1 { font-size:4.2rem; } p { font-size:2.2rem; }
-      .couple { font-size:70px; }
+    .footer-sume {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 8px;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    footer p {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    footer .footer-date {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+    /* Next page button */
+    .next-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 11px 26px;
+      border: 1px solid var(--gold-muted);
+      background: linear-gradient(135deg, #fffdf540, #f5e9d460);
+      color: var(--warm-brown);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      animation: fadeIn 2s ease 2.2s both;
+      z-index: 10;
+    }
+    .next-btn:hover {
+      background: linear-gradient(135deg, #f5e9d4, #ecdfc8);
+      box-shadow: 0 6px 24px #c9a84c25;
+      transform: translateX(4px);
+    }
+    .next-arrow {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border-right: 1.5px solid var(--gold);
+      border-top: 1.5px solid var(--gold);
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+    .next-btn:hover .next-arrow {
+      transform: rotate(45deg) translate(2px, -2px);
     }
   </style>
 </head>
 <body>
 
-  <!-- Fixed message only on first page -->
-  <div class="fixed-msg" id="fixedMsg"></div>
+<!-- ========================== PAGE ONE ========================== -->
+<section class="page-one">
+  <!-- SEO keyword tag -->
+  <div class="seo-tag">SUME</div>
 
-  <!-- Couple -->
-  <div class="couple left">ME</div>
-  <div class="couple right">YOU</div>
+  <!-- Floating orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
-  <!-- Pages -->
-  <section id="p1" class="active">
-    <h1>Happy Birthday<br>My Love</h1>
-    <p>Today is all about you my princess</p>
-    <button class="btn" onclick="go(2)">Touch for magic</button>
-  </section>
+  <!-- Top header -->
+  <div class="page-header">
+    <div class="since">Since 21 March 2025</div>
+    <h1>Our <em>forever</em> begins</h1>
+  </div>
 
-  <section id="p2">
-    <img src="uff.jpg" class="heart-img">
-    <h1>This is Us</h1>
-    <p>That one day we finally met became the most precious day of my life.
-Your hand in mine felt like home, the red rose I gave you carried all my feelings.
-When I looked into your eyes and said “I love you,” my heart spoke the truth I’d kept for so long.
-We closed our eyes, prayed together, and asked God to bless us forever.
-Since that moment, every beat of my heart still whispers your name.</p>
-    <div>
-      <button class="btn" onclick="go(1)">Back</button>
-      <button class="btn" onclick="go(3)">Next</button>
+  <!-- Circle image in the middle top -->
+  <div class="circle-container">
+    <div class="ring-glow"></div>
+    <div class="ring-rotate"></div>
+    <div class="circle-photo">
+      <!-- Place hand.png in same folder as this HTML file -->
+      <img src="hand.png" alt="Suraj and Meghana - SUME"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="img-placeholder" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">S</div>
     </div>
-  </section>
+  </div>
 
-  <section id="p3">
-    <img src="you1.jpg" class="heart-img">
-    <h1>My Angel</h1>
-    <p>You are my peace when the world feels too loud — your voice alone calms every storm inside me.
-You take care of me like no one ever has, wrapping me in love even on my worst days.
-And yes, sometimes you eat my head… but even that I love, because it’s you — perfectly imperfect, completely mine. ❤️</p>
-        <div>
-      <button class="btn" onclick="go(2)">Back</button>
-      <button class="btn" onclick="go(4)">Next</button>
+  <!-- Date badge -->
+  <div class="date-badge">
+    <span>21 - 03 - 2025</span>
+  </div>
+
+  <!-- Names -->
+  <div class="names-block">
+    <div class="primary-names">
+      Suraj <span class="amp">&</span> Meghana
     </div>
-  </section>
+    <div class="nick-names">Surii &nbsp;&bull;&nbsp; Meghu &nbsp;&bull;&nbsp; Soni</div>
+  </div>
 
-  <section id="p4">
-    <img src="mine.jpg" class="heart-img">
-    <h1>My Promise</h1>
-    <p>Baby, I promise to love you even on days when anger gets the best of me.
-If I ever raise my voice or say something that hurts you, please know it’s never my heart speaking; it’s just the storm inside me slipping out.
-I’ll never blame you on purpose, never want you to feel small; I’m still learning to control it, but I’m trying every day because you deserve only gentleness from me.
-Even in my worst moments, you are my safest place and the one I love most.
-Forgive me in advance, hold my hand tighter, and I’ll keep becoming the calm man you truly deserve. Forever yours. ❤️</p>
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line" style="background:linear-gradient(90deg,var(--gold-muted),transparent)"></div>
+  </div>
 
-    <div>
-      <button class="btn" onclick="go(3)">Back</button>
-      <button class="btn" onclick="go(5)">Next</button>
+  <!-- Opening quote -->
+  <div class="opening-quote">
+    <p>Meghu, I don't know how I lived all those days before you. But I know I never want to find out again.</p>
+    <div class="attr">Surii &mdash; to his Soni</div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <!-- Next Page Button -->
+  <a href="sume-page2.html" class="next-btn">
+    <span class="next-label">Next</span>
+    <span class="next-arrow"></span>
+  </a>
+</section>
+
+<!-- ========================== OUR STORY ========================== -->
+<div class="section">
+  <div class="section-label">SUME &mdash; Surii's Story</div>
+  <h2 class="section-title">How It All <em>Began</em></h2>
+
+  <p class="story-para">
+    Meghu, I remember the exact moment I realised something was different about you. It wasn't loud. It wasn't sudden. It was quiet &mdash; the way you laughed at something small, the way you said my name. And I thought, I want to hear that for the rest of my life.
+  </p>
+  <p class="story-para">
+    You came into my life and somehow rearranged everything &mdash; not in a chaotic way, but in the way that finally makes a room feel like home. I didn't know I was waiting for you, Soni. But looking back, I think a part of me always was.
+  </p>
+
+  <div class="love-quote">
+    <p>Meghu, in you I found the home I never knew I was searching for. Every day with you is a page I never want to stop reading.</p>
+    <div class="quote-attr">Surii &mdash; to Meghu</div>
+  </div>
+
+  <p class="story-para">
+    On the 21st of March, 2025, I made you mine and you made me yours. That day didn't feel like a beginning. It felt like finally arriving somewhere I was always meant to be. Like my heart exhaled for the first time.
+  </p>
+</div>
+
+<!-- ========================== DIVIDER ========================== -->
+<div class="separator">
+  <div class="sep-line"></div>
+  <div class="sep-text">SUME</div>
+  <div class="sep-line rev"></div>
+</div>
+
+<!-- ========================== WHAT THEY MEAN ========================== -->
+<div class="section">
+  <div class="section-label">What She Means to Me</div>
+  <h2 class="section-title">My <em>Soni</em></h2>
+
+  <div class="cards-grid">
+    <div class="card">
+      <span class="card-icon">S</span>
+      <h3>She Changed Me</h3>
+      <p>
+        Meghu, before you, I thought I was fine on my own. But you showed me what it feels like to have someone truly in your corner &mdash; and now I can't imagine choosing anything else.
+      </p>
     </div>
-  </section>  
+    <div class="card">
+      <span class="card-icon">M</span>
+      <h3>My Meghu, My Soni</h3>
+      <p>
+        You are my calm on the difficult days and my reason to celebrate the good ones. You don't just make life better, Soni &mdash; you make it make sense. That is everything to me.
+      </p>
+    </div>
+    <div class="card">
+      <span class="card-icon">U</span>
+      <h3>Us &mdash; SUME</h3>
+      <p>
+        SUME is what we are when we are together. It is our word, our world. I love what we have built and I love even more what we are still going to build &mdash; one day at a time, you and me.
+      </p>
+    </div>
+  </div>
+</div>
 
-  <section id="p5">
-    <h1>I Love You</h1>
-    <h1 style="font-size:7.5rem;color:#ff6b9d;">Endlessly</h1>
-    <p>To my future wife · my everything</p>
-    <p style="margin-top:60px;font-size:3.5rem;color:#ffd700;">Forever Mine </p>
-    <button class="btn" onclick="go(4)">Back</button>
-  </section>
+<!-- ========================== QUOTES SECTION ========================== -->
+<div class="section">
+  <div class="section-label">Words from Surii</div>
+  <h2 class="section-title">Things I <em>Mean</em></h2>
 
-  <!-- Confetti + Fixed bug fix -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    const fixedMsg = document.getElementById('fixedMsg');
+  <div class="love-quote">
+    <p>Meghu, you make silence feel like a conversation and distance feel like nothing at all. I would choose you, in every version of every life I ever live. Without hesitation. Every single time.</p>
+    <div class="quote-attr">Surii &mdash; to his Soni</div>
+  </div>
 
-    function go(n) {
-      // Hide the fixed message after leaving page 1
-      if (n !== 1) {
-        fixedMsg.style.opacity = '0';
-        fixedMsg.style.transition = 'opacity 0.8s';
-      }
+  <div class="love-quote">
+    <p>Soni, the way you laugh at the dumbest things, the way you get mad and still look beautiful doing it, the way you say my name &mdash; I notice all of it. I always have. I always will.</p>
+    <div class="quote-attr">Surii &mdash; to Meghu</div>
+  </div>
 
-      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.getElementById('p'+n).classList.add('active');
+  <div class="love-quote">
+    <p>You know what I love most? That I don't have to be anything other than myself with you. You just get me, Meghu. And I think that is the rarest thing in the world. I am not letting that go.</p>
+    <div class="quote-attr">Surii &mdash; 21.03.2025</div>
+  </div>
+</div>
 
-      // Celebration confetti blast
-      confetti({
-        particleCount: 180,
-        spread: 90,
-        origin: { y: 0.6 },
-        colors: ['#ffd700', '#ff6b9d', '#ff1493', '#ffffff']
-      });
+<!-- ========================== PROMISE ========================== -->
+<div class="section">
+  <div class="section-label">My Promise to You</div>
+  <div class="promise-wrap">
+    <div class="promise-names">Surii &mdash; to Meghu</div>
+    <p>
+      Soni, I promise to always show up for you. On the ordinary days and the hard ones. I promise to never stop noticing the little things about you that make my world warmer. I promise that on the 21st of March every year, I will remind you &mdash; choosing you was the best thing I ever did. And I will keep choosing you, every single day, for as long as you will have me.
+    </p>
+  </div>
+</div>
 
-      // Couple animation
-      document.body.classList.add('show-couple');
-      setTimeout(() => document.body.classList.remove('show-couple'), 5000);
+<!-- ========================== FOOTER ========================== -->
+<footer>
+  <div class="footer-sume">SUME</div>
+  <p>Written by Surii, for his Meghu &mdash; his Soni, his forever.</p>
+  <div class="footer-date">21 &mdash; 03 &mdash; 2025 &nbsp; | &nbsp; Surii &amp; Meghu</div>
+</footer>
 
-      window.scrollTo(0,0);
-    }
-
-    // First load celebration
-    window.onload = () => {
-      confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-      document.body.classList.add('show-couple');
-      setTimeout(() => document.body.classList.remove('show-couple'), 5000);
-    };
-  </script>
 </body>
 </html>
